@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .card{
+        width:200px;
+        border:2px solid #ffcbb3;
+        background-color: #ffeee6;
+    }
+    .product-img{
+        height: 150px;
+        display:block;
+        margin:20px auto;
+    }
+    .product-title{
+        margin: 0;
+        padding: 0;
+        text-align: center;
+
+    }
+    .product-price{
+        margin: 0;
+        padding: 0;
+        text-align: center;
+
+    }
+    .btn-buy-now{
+        background-color: #ff621a;
+        color:white;
+        border: none;
+        padding: 5px 20px;
+        display:block;
+        margin: 10px auto;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    .quantity-icon{
+        height: 20px;
+        margin: 0 10px;
+        cursor: pointer;
+    }
+    .quantity-container{
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        margin: 10px 0;
+
+    }
+</style>
+<body>
+    <div class="card" id="card">
+        <img src="shoes.jpg"class="product-img"/>
+        <h2 class="product-title">FAUSTO</h2>
+        <p class="product-price">
+            price: ₹400
+        </p>
+
+        <div class="quantity-container">
+            <img src="./minus-button.png" class="quantity-icon" onclick="dec()"/>
+            <span id="quantity">1</span>
+            <img src="./addition.png" class="quantity-icon" onclick="inc()"/>
+        </div>
+
+        <button onclick=""class="btn-buy-now">Buy Now</button>
+    </div>
+
+
+    <script>
+        const quantElement=document.getElementById('quantity');
+       
+        function inc(){
+            let quantity=parseInt(quantElement.innerText);
+            quantElement.innerText=++quantity;
+
+        }
+        function dec(){
+            let quantity=parseInt(quantElement.innerText);
+            if(quantity>1){
+                quantElement.innerText=--quantity;
+            }
+           
+
+        }
+    </script>
+    
+</body>
+</html>
